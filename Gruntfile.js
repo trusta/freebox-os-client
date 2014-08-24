@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
     // Load grunt tasks automatically
