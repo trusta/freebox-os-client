@@ -109,8 +109,6 @@ client.requestAuthorization(null,tokenRequest);
 
 #### Track authorization progress
 ``` js
-var crypto = require('crypto');
-
 var freebox = {
     url: 'mafreebox.freebox.fr',
     port: 80
