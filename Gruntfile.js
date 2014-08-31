@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         complexity: {
             generic: {
-                src: ['app/**/*.js'],
+                src: ['freebox-os-client.js'],
                 options: {
                     errorsOnly: false,
                     cyclometric: 6, // default is 3
@@ -24,39 +24,18 @@ module.exports = function(grunt) {
         jshint: {
             all: [
                 'Gruntfile.js',
-                'app/**/*.js',
-                'test/**/*.js'
+                '**/*.js',
+                '!node_modules/**/*.js'
             ],
             options: {
                 jshintrc: '.jshintrc',
                 reporter: require('jshint-stylish')
             }
         },
-        mochacli: {
-            all: ['test/**/*.js'],
-            options: {
-                reporter: 'spec',
-                ui: 'tdd'
-            }
-        },
         watch: {
             js: {
-                files: ['app/**/*.js', '!node_modules/**/*.js'],
+                files: ['**/*.js', '!node_modules/**/*.js'],
                 tasks: ['default'],
-                options: {
-                    nospawn: true
-                }
-            },
-            jsTest: {
-                files: ['test/**/*.js'],
-                tasks: ['test'],
-                options: {
-                    nospawn: true
-                }
-            },
-            gruntfile: {
-                files: ['Gruntfile.js'],
-                tasks: ['jshint'],
                 options: {
                     nospawn: true
                 }
@@ -64,18 +43,9 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('test', [
+    grunt.registerTask('default', [
         'complexity',
         'jshint',
-        'mochacli',
         'watch'
     ]);
-
-    grunt.registerTask('ci', [
-        'complexity',
-        'jshint',
-        'mochacli'
-    ]);
-
-    grunt.registerTask('default', ['test']);
 };
