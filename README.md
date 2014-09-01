@@ -155,7 +155,7 @@ client.getChallenge(null, null, null, function(response) {
 
 ## API
 
-####Authentication
+#### Authentication
 
 Name                                                                      |    Method
 :------------------------------------------------------------------------:|:----------------------------------------:
@@ -165,7 +165,27 @@ Name                                                                      |    M
 [Opening a session](http://dev.freebox.fr/sdk/os/login/#opening-a-session)|openSession
 [Closing the current session](http://dev.freebox.fr/sdk/os/login/#closing-the-current-session)|closeSession
     
+#### Download
 
+Name                                                                      |    Method
+:------------------------------------------------------------------------:|:----------------------------------------:
+[Retrieve all Download tasks](http://dev.freebox.fr/sdk/os/download/#get--api-v3-downloads-)|getAllDownloads
+[Retrieve a Download task](http://dev.freebox.fr/sdk/os/download/#get--api-v3-downloads-{id})|getDownload
+[Delete a Download task](http://dev.freebox.fr/sdk/os/download/#delete--api-v3-downloads-{id})|deleteDownload
+[Erase a Download task](http://dev.freebox.fr/sdk/os/download/#delete--api-v3-downloads-{id}-erase)|eraseDownload
+[Update a Download task](http://dev.freebox.fr/sdk/os/download/#update-a-download-task)|updateDownload
+[Get download log](http://dev.freebox.fr/sdk/os/download/#get-download-log)|getDownloadLog
+[Adding a new Download task by url](http://dev.freebox.fr/sdk/os/download/#adding-by-url)|addDownloadByUrl
+[Get the Download Stats](http://dev.freebox.fr/sdk/os/download/#get-the-download-stats)|getDownloadStats
+[Get the list of files for a given Download](http://dev.freebox.fr/sdk/os/download/#get-the-list-of-files-for-a-given-download)|getFilesOfDownload
+[Change the priority of a Download File](http://dev.freebox.fr/sdk/os/download/#change-the-priority-of-a-download-file)|changePriorityOfDownloadFile
+    
+
+## TODO
+
+####Download
++ Adding a new Download task by file upload
++ UNSTABLES
 
 ## License
 

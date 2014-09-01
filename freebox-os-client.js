@@ -10,7 +10,8 @@ var util = require('util');
  * Load the endpoint declarations
  */
 var endpoints = [].concat(
-    require('./endpoints/authentication')
+    require('./endpoints/authentication'),
+    require('./endpoints/download')
 );
 
 /**
