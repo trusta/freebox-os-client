@@ -1,11 +1,9 @@
 {
     "name": "freebox-os-client",
-    "version": "0.0.0",
-    "description": "",
-    "main": "app/freebox-os-client.js",
-    "scripts": {
-        "test": "node_modules/.bin/grunt ci"
-    },
+    "version": "0.0.1",
+    "description": "A NodeJS client for the FreeboxOS API.",
+    "main": "freebox-os-client.js",
+    "scripts": {},
     "repository": {
         "type": "git",
         "url": "https://github.com/trusta/freebox-os-client"
