@@ -7,9 +7,9 @@ Documentation : http://dev.freebox.fr/sdk/os/
 
 ---------------------
 
-## ~~Installation~~ - Not actually
+## Installation
 
-~~This module is installed via npm:~~
+This module is installed via npm:
 
 ``` bash
 $ npm install freebox-os-client
