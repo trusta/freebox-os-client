@@ -4,7 +4,6 @@
  * Define modules
  */
 var request = require('request');
-var util = require('util');
 
 /**
  * Load the endpoint declarations
