@@ -4,7 +4,6 @@
  * Define modules
  */
 var request = require('request');
-var util = require('util');
 
 /**
  * Load the endpoint declarations
@@ -92,14 +91,15 @@ function createEndPoint(endpoint) {
         /**
          * Define the options
          */
-        var options = util._extend(endpoint.options, {
+        var options = {
             url: client.baseUrl + endpoint.options.url,
             json: bodyParam,
             headers: {
                 'X-Fbx-App-Auth': sessionToken
             },
-            encode: 'utf-8'
-        });
+            encode: 'utf-8',
+            method: endpoint.options.method
+        };
 
         /**
          * Replace the route parameters
