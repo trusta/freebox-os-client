@@ -26,3 +26,4 @@ node_modules
 
 *.sublime*
 examples/config/*.js
+.DS_Store
