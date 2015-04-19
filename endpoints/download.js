@@ -35,7 +35,7 @@ module.exports = [{
         method: 'GET'
     }
 }, {
-    name: 'addDownloadByUrl',
+    name: 'addDownload',
     options: {
         url: '/downloads/add',
         method: 'POST'

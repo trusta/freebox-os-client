@@ -10,6 +10,7 @@ var request = require('request');
  */
 var endpoints = [].concat(
     require('./endpoints/authentication'),
+    require('./endpoints/config'),
     require('./endpoints/download')
 );
 
@@ -91,15 +92,26 @@ function createEndPoint(endpoint) {
         /**
          * Define the options
          */
-        var options = {
-            url: client.baseUrl + endpoint.options.url,
-            json: bodyParam,
-            headers: {
-                'X-Fbx-App-Auth': sessionToken
-            },
-            encode: 'utf-8',
-            method: endpoint.options.method
-        };
+        var options;
+        options = {
+          url: client.baseUrl + endpoint.options.url,
+          encode: 'utf-8',
+          method: endpoint.options.method
+        }
+
+        if(bodyParam && bodyParam.form){
+            options.formData = bodyParam.formData;
+            options.headers = {
+              'X-Fbx-App-Auth': sessionToken,
+              'Content-type':'multipart/form-data'
+            };
+        }else{
+            options.json = bodyParam;
+            options.headers = {
+              'X-Fbx-App-Auth': sessionToken
+            };
+        }
+        
 
         /**
          * Replace the route parameters
